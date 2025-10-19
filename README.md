@@ -130,7 +130,7 @@ src/main/resources/
 #### Create Server
 ![App Screenshot](https://drive.google.com/uc?id=1ezt912aEXuSkapDF9qfan7BTS-NpIqp7)
 
-![App Screenshot](https://drive.google.com/uc?id=1p0iGF1t3Rc0apF43wAnWWqF4eG1Yt9PT)
+
 
 
 
