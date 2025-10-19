@@ -133,8 +133,6 @@ src/main/resources/
 ![App Screenshot](https://drive.google.com/uc?id=1p0iGF1t3Rc0apF43wAnWWqF4eG1Yt9PT)
 
 
-#### Get all Servers
-![App Screenshot](https://drive.google.com/uc?id=1eJEaYdNRP7zDD-3HA-fgTLTUXMtebZ5t)
 
 
 #### Get Server by ID
