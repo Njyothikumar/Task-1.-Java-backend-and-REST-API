@@ -1,125 +1,101 @@
-🚀 Server Management API
+# 🚀 Server Management API
 
-A Java-based REST API built with Spring Boot and MongoDB for managing "server" objects. The application allows users to create, retrieve, search, and delete server records via HTTP endpoints.
+A Java-based REST API built with **Spring Boot** and **MongoDB** for managing "server" objects. The application allows users to **create**, **retrieve**, **search**, and **delete** server records via HTTP endpoints.
 
-This project is intended for learning REST API development, Java Spring Boot, and MongoDB integration.
+This project is ideal for learning REST API development with Java Spring Boot and MongoDB integration.
 
-📚 Table of Contents
+---
 
-Prerequisites
+## 📚 Table of Contents
 
-Project Setup
+- [✅ Prerequisites](#-prerequisites)
+- [⚙️ Project Setup](#️-project-setup)
+- [🛠️ MongoDB Configuration](#️-mongodb-configuration)
+- [📁 Project Structure](#-project-structure)
+- [📡 API Endpoints](#-api-endpoints)
+- [🧪 Postman Testing](#-postman-testing)
+- [📄 License](#-license)
 
-MongoDB Configuration
+---
 
-Project Structure
+## ✅ Prerequisites
 
-API Endpoints
+Ensure the following are installed on your system:
 
-Create Server
+- Java JDK 17+
+- Maven
+- MongoDB (running locally or via MongoDB Atlas)
+- Postman (for testing the API)
 
-Get All Servers
+---
 
-Get Server by ID
+## ⚙️ Project Setup
 
-Delete Server by ID
+### 1. Clone the repository
 
-Find Server by Name
-
-Postman Testing
-
-License
-
-✅ Prerequisites
-
-Before running this project, ensure you have the following installed:
-
-Java JDK 17+
-
-Maven
-
-MongoDB
-
-Postman
- (for testing)
-
-⚙️ Project Setup
-
-Clone the repository:
-
+bash
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
-
-
-Build the project:
-
+2. Build the project
+bash
+Copy code
 mvn clean install
-
-
-Run the application:
-
+3. Run the application
+bash
+Copy code
 mvn spring-boot:run
-
-
-By default, the app runs on:
-http://localhost:8080
+The server will start on:
+👉 http://localhost:8080
 
 🛠️ MongoDB Configuration
+Make sure MongoDB is running locally.
 
-Ensure MongoDB is running locally on your machine. Configure the database settings in src/main/resources/application.properties:
+Update the configuration in src/main/resources/application.properties:
 
+properties
+Copy code
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=Server_API
-
 📁 Project Structure
+plaintext
+Copy code
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com.example.serverapi/
-│   │   │       ├── ServerController/       # REST controller
-│   │   │       ├── Server/                 # Server model
+│   │   │       ├── ServerController/       # REST API controllers
+│   │   │       ├── Server/                 # Server model (POJO)
 │   │   │       ├── ServerRepository/       # MongoDB repository
-│   │   │       └── MongoConfig/            # (Optional) Mongo config
+│   │   │       └── MongoConfig/            # (Optional) DB config
 │   │   └── resources/
-│   │       └── application.properties
-│   └── test/                               # Test classes
-├── target/                                 # Compiled files
-├── pom.xml                                 # Maven dependencies
-└── README.md                               # Project guide
-
+│   │       └── application.properties      # Configurations
+│   └── test/                               # Unit and integration tests
+├── pom.xml                                 # Maven build file
+└── README.md                               # Project documentation
 📡 API Endpoints
-1. 🟢 Create Server [POST]
+1. 🟢 Create Server - POST /api/servers
+Request Body:
 
-URL: /api/servers
-Body:
-
+json
+Copy code
 {
   "id": "123",
-  "name": "Amrita",
+  "name": "Amrita CentOS",
   "language": "Java",
-  "framework": "Django"
+  "framework": "Spring Boot"
 }
+2. 🔵 Get All Servers - GET /api/servers
+Returns a list of all server objects.
 
-2. 🔵 Get All Servers [GET]
+3. 🔍 Get Server by ID - GET /api/servers/{id}
+Retrieves a server by its unique ID.
 
-URL: /api/servers
-Returns a list of all servers.
+4. ❌ Delete Server by ID - DELETE /api/servers/{id}
+Deletes a specific server using its ID.
 
-3. 🔍 Get Server by ID [GET]
-
-URL: /api/servers/{id}
-Returns a single server by its ID.
-
-4. ❌ Delete Server by ID [DELETE]
-
-URL: /api/servers/{id}
-Deletes the server with the specified ID.
-
-5. 🔎 Find Server by Name [GET]
-
-URL: /api/servers/findByName?name={searchText}
-Searches for servers where the name contains the given text (case-insensitive).
+5. 🔎 Find Server by Name - GET /api/servers/findByName?name={searchText}
+Searches for servers whose name contains the given query string (case-insensitive).
 
 ## Testing With Postman
 
