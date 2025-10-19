@@ -122,7 +122,6 @@ src/main/resources/
 
 ```
 
-Let me know if you'd like me to add a License section with sample text or anything else!
 ```
 
 
