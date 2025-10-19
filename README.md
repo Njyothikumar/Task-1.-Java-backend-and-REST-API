@@ -1,3 +1,4 @@
+
 # 🚀 Server Management API
 
 A Java-based REST API built with **Spring Boot** and **MongoDB** for managing "server" objects. The application allows users to **create**, **retrieve**, **search**, and **delete** server records via HTTP endpoints.
@@ -33,69 +34,97 @@ Ensure the following are installed on your system:
 
 ### 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
-2. Build the project
-bash
-Copy code
-mvn clean install
-3. Run the application
-bash
-Copy code
-mvn spring-boot:run
-The server will start on:
-👉 http://localhost:8080
+````
 
-🛠️ MongoDB Configuration
+### 2. Build the project
+
+```bash
+mvn clean install
+```
+
+### 3. Run the application
+
+```bash
+mvn spring-boot:run
+```
+
+The server will start on:
+👉 [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 🛠️ MongoDB Configuration
+
 Make sure MongoDB is running locally.
 
-Update the configuration in src/main/resources/application.properties:
+Update the configuration in `src/main/resources/application.properties`:
 
-properties
-Copy code
+```properties
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=Server_API
-📁 Project Structure
-plaintext
-Copy code
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com.example.serverapi/
-│   │   │       ├── ServerController/       # REST API controllers
-│   │   │       ├── Server/                 # Server model (POJO)
-│   │   │       ├── ServerRepository/       # MongoDB repository
-│   │   │       └── MongoConfig/            # (Optional) DB config
-│   │   └── resources/
-│   │       └── application.properties      # Configurations
-│   └── test/                               # Unit and integration tests
-├── pom.xml                                 # Maven build file
-└── README.md                               # Project documentation
-📡 API Endpoints
-1. 🟢 Create Server - POST /api/servers
-Request Body:
+```
 
-json
-Copy code
-{
-  "id": "123",
-  "name": "Amrita CentOS",
-  "language": "Java",
-  "framework": "Spring Boot"
-}
-2. 🔵 Get All Servers - GET /api/servers
-Returns a list of all server objects.
+---
 
-3. 🔍 Get Server by ID - GET /api/servers/{id}
-Retrieves a server by its unique ID.
+## 📁 Project Structure
 
-4. ❌ Delete Server by ID - DELETE /api/servers/{id}
-Deletes a specific server using its ID.
+```
+src/
+ ├── main/
+ │    ├── java/          # Java source files for the main application
+ │    └── resources/     # Application resource files (e.g., configuration)
+ ├── test/
+ │    ├── java/          # Test source files
+ │    └── resources/     # Test resource files
+target/                  # Compiled bytecode and build artifacts
+.gitignore               # Specifies files/directories ignored by Git
+pom.xml                  # Maven configuration file
+README.md                # Project documentation (this file)
+```
 
-5. 🔎 Find Server by Name - GET /api/servers/findByName?name={searchText}
-Searches for servers whose name contains the given query string (case-insensitive).
+---
+
+## Package Structure
+
+* **com.example.serverapi.ServerController**
+  REST controller classes that handle HTTP requests and responses.
+
+* **com.example.serverapi.Server**
+  Data model classes representing server entities.
+
+* **com.example.serverapi.ServerRepository**
+  Data access layer implementing MongoDB persistence logic.
+
+* **com.example.serverapi.MongoConfig**
+  Configuration classes including MongoDB setup.
+
+---
+
+## Configuration Files
+
+All key configuration files, such as `application.properties`, are located in:
+
+```
+src/main/resources/
+```
+
+--
+
+---
+
+
+
+---
+
+```
+
+Let me know if you'd like me to add a License section with sample text or anything else!
+```
+
 
 ## Testing With Postman
 
