@@ -15,7 +15,6 @@ This project is ideal for learning REST API development with Java Spring Boot an
 - [📁 Project Structure](#-project-structure)
 - [📡 API Endpoints](#-api-endpoints)
 - [🧪 Postman Testing](#-postman-testing)
-- [📄 License](#-license)
 
 ---
 
@@ -125,24 +124,14 @@ src/main/resources/
 ```
 
 
-## Testing With Postman
+## Postman Testing
 
-#### Create Server
-![App Screenshot](https://drive.google.com/uc?id=1ezt912aEXuSkapDF9qfan7BTS-NpIqp7)
-
-
+#### Add Server
+![App Screenshot](1.jpg)
 
 
+![App Screenshot](2.jpg)
 
+![App Screenshot](3.jpg)
 
-#### Get Server by ID
-![App Screenshot](https://drive.google.com/uc?id=15Y4E53wPiE3-QDY7h9m0O48aN3KWIuXL)
-
-
-
-#### Find Servers by Name
-![App Screenshot](https://drive.google.com/uc?id=19Q0BTA1mREzUyAmpQmfu1xv4f5gaJUyl)
-
-
-#### Delete Server by ID
-![App Screenshot](https://drive.google.com/uc?id=1bIiLpAWRTenqYNuLOBWuNp8ML5xsTAhG)
+![App Screenshot](4.jpg)
